@@ -1,8 +1,8 @@
  import Header from './components/Header';
  import Footer from './components/Footer';  
- import PostCard from './components/PostCard';
+ import PostList from './components/PostList';
  import Sidebar from './components/Sidebar';
- 
+ import Button from './components/Button';
  
  function App() {
   const name = "Mshi";
@@ -28,7 +28,10 @@
       <p>This week I'm learning components, props, and state.</p>
       <p>Today is: {currentDate}</p>
       <p>{greeting}</p>
-      <PostCard />
+      <Button text="View Posts" />
+      <Button text="Login" />
+      <Button />
+      <PostList />
       <Sidebar />
       </main>
     <Footer />

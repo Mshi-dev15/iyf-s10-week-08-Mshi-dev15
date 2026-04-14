@@ -1,9 +1,10 @@
-function PostCard () {
+function PostCard ({title, excerpt, author, date}) {
     return(
         <article>
-            <h3>Post Title</h3>
-            <p>Post excerpt goes here....</p>
-            <span>Posted on Jnuary 1, 2026</span>
+            <h3>{title}</h3>
+            <p>{excerpt}</p>
+            <span>{author}</span>
+            <span>- {date}</span>
         </article>
     );
 }
