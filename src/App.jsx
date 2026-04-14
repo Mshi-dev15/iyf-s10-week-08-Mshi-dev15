@@ -1,11 +1,15 @@
- import Header from './components/Header';
- import Footer from './components/Footer';  
+ //import Header from './components/Header';
+ //import Footer from './components/Footer';
+ import Layout from './components/Layout';  
  import PostList from './components/PostList';
  import Sidebar from './components/Sidebar';
  import Button from './components/Button';
- 
+ import Card from './components/Card';
+ import UserGreeting from './components/UserGreeting';
+
+
  function App() {
-  const name = "Mshi";
+  const user = "Mshi";
   const currentDate = new Date().toDateString();
   const hour = new Date().getHours();
 
@@ -19,23 +23,29 @@
   }
 
   return (
-    <div>
-      <Header />
-      <main>
-      <h1>Hello,👋 I'm {name}</h1>
-      <p>I'm learning React as part of IYF Season 10.</p>
-      <p>I enjoy coding and building things for the web.</p>
-      <p>This week I'm learning components, props, and state.</p>
+    <Layout>
+
+      <Card title="Welcome to communityHub">
+      <UserGreeting user={user} />
       <p>Today is: {currentDate}</p>
       <p>{greeting}</p>
       <Button text="View Posts" />
       <Button text="Login" />
-      <Button />
+      <Button text="Submit" variant="primary" />
+      <Button text="Cancel" variant="secondary" />
+      <Button text="Delete" variant="danger" />
+      <Button /> 
+      </Card>
+
+      <Card title="Latest Posts">
       <PostList />
+      </Card>
+
+      <Card>
       <Sidebar />
-      </main>
-    <Footer />
-    </div>
+    </Card>
+    
+    </Layout>
   );
 }
 
