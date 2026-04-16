@@ -1,7 +1,7 @@
-function Footer () {
+function Footer() {
     return(
-        <footer>
-            <p>&copy; 2026 CommunityHub. All rightreserved.</p>
+        <footer className="footer">
+            <p>&copy; 2026 CommunityHub. All right reserved.</p>
         </footer>
     );
 

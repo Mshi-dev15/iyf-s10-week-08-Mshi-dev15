@@ -4,8 +4,8 @@ function PostList(){
     const posts =[
          {
             id: 1,
-            title: "Getting started with react",
-            excerpt: "Learn the basic of react and how to build components",
+            title: "Getting started with React",
+            excerpt: "Learn the basic of React and how to build components",
             author: "Alice",
             date: "Jan 15, 2026"
          },
@@ -19,9 +19,9 @@ function PostList(){
       {
         id: 3,
         title: "CSS tips and tricks",
-        excerpt: "Make your website look amaizing with these CSS tips",
+        excerpt: "Make your website look amazing with these CSS tips",
         author: "Charlie",
-        date: "jan 13, 2026"
+        date: "Jan 13, 2026"
       }
          
 
