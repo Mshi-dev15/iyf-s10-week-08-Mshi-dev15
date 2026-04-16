@@ -6,6 +6,9 @@
  import Button from './components/Button';
  import Card from './components/Card';
  import UserGreeting from './components/UserGreeting';
+ import Counter from './components/Counter';
+ import Toggle from './components/Toggle';
+ import UserForm from './components/UserForm';
 
 
  function App() {
@@ -44,6 +47,11 @@
       <Card>
       <Sidebar />
     </Card>
+    <card title="Interactive Examples">
+      <Counter />
+      <Toggle />
+      <UserForm /> 
+    </card>
     
     </Layout>
   );
