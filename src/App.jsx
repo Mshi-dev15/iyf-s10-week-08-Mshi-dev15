@@ -9,7 +9,8 @@
  import Counter from './components/Counter';
  import Toggle from './components/Toggle';
  import UserForm from './components/UserForm';
-
+ import EvenExample from './components/EventExample';
+ import ContactForm from './components/ContactForm';
 
  function App() {
   const user = "Mshi";
@@ -51,6 +52,11 @@
       <Counter />
       <Toggle />
       <UserForm /> 
+    </card>
+    <card title="Events and Forms">
+      <EvenExample />
+      <ContactForm />
+
     </card>
     
     </Layout>
