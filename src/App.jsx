@@ -1,75 +1,99 @@
- //import Header from './components/Header';
- //import Footer from './components/Footer';
- import LikesDemo from './components/LikesDemo';
- import Layout from './components/Layout';  
- import PostList from './components/PostList';
- import Sidebar from './components/Sidebar';
- import Button from './components/Button';
- import Card from './components/Card';
- import UserGreeting from './components/UserGreeting';
- import Counter from './components/Counter';
- import Toggle from './components/Toggle';
- import UserForm from './components/UserForm';
- import EvenExample from './components/EventExample';
- import ContactForm from './components/ContactForm';
- import TodoList from './components/TodoList';
+import { useState } from 'react';
+import Layout from './components/Layout';
+import Card from './components/Card';
+import PostList from './components/PostList';
+import Sidebar from './components/Sidebar';
+import CreatePost from './components/CreatePost';
 
- function App() {
-  const user = "Mshi";
-  const currentDate = new Date().toDateString();
-  const hour = new Date().getHours();
+function App() {
+    const [posts, setPosts] = useState([
+        {
+            id: 1,
+            title: "Getting Started with React",
+            excerpt: "Learn the basics of React and how to build components...",
+            author: "Alice",
+            date: "Jan 15, 2026",
+            likes: 0
+        },
+        {
+            id: 2,
+            title: "JavaScript Best Practices",
+            excerpt: "Write cleaner and more efficient JavaScript code...",
+            author: "Bob",
+            date: "Jan 14, 2026",
+            likes: 0
+        },
+        {
+            id: 3,
+            title: "CSS Tips and Tricks",
+            excerpt: "Make your website look amazing with these CSS tips...",
+            author: "Charlie",
+            date: "Jan 13, 2026",
+            likes: 0
+        }
+    ]);
 
-  let greeting;
-  if (hour < 12) {
-    greeting = "Good morning! 🌅";
-  } else if (hour < 17) {
-    greeting = "Good afternoon! ☀️";
-  } else {
-    greeting = "Good evening! 🌙";
-  }
+    const [search, setSearch] = useState('');
 
-  return (
-    <Layout>
+    // ADD a new post
+    const handleAddPost = (newPost) => {
+        setPosts([newPost, ...posts]);
+    };
 
-      <Card title="Welcome to communityHub">
-      <UserGreeting user={user} />
-      <p>Today is: {currentDate}</p>
-      <p>{greeting}</p>
-      <Button text="View Posts" />
-      <Button text="Login" />
-      <Button text="Submit" variant="primary" />
-      <Button text="Cancel" variant="secondary" />
-      <Button text="Delete" variant="danger" />
-      <Button /> 
-      </Card>
+    // LIKE a post
+    const handleLike = (id) => {
+        setPosts(posts.map(post =>
+            post.id === id
+                ? { ...post, likes: post.likes + 1 }
+                : post
+        ));
+    };
 
-      <Card title="Latest Posts">
-      <PostList />
-      </Card>
+    // DELETE a post
+    const handleDelete = (id) => {
+        setPosts(posts.filter(post => post.id !== id));
+    };
 
-      <Card>
-      <Sidebar />
-    </Card>
-    <card title="Interactive Examples">
-      <Counter />
-      <Toggle />
-      <UserForm /> 
-    </card>
-    <card title="Events and Forms">
-      <EvenExample />
-      <ContactForm />
+    // FILTER posts by search
+    const filteredPosts = posts.filter(post =>
+        post.title.toLowerCase().includes(search.toLowerCase())
+    );
 
-    </card>
+    return (
+        <Layout>
+            <div style={{ display: 'flex', gap: '20px' }}>
+                <main style={{ flex: 2 }}>
+                    <Card title="Create a Post">
+                        <CreatePost onAddPost={handleAddPost} />
+                    </Card>
 
-    <Card title="Todo List">
-    <TodoList />
-</Card>
-<Card title="Likes Demo - Lifting State Up">
-    <LikesDemo />
-</Card>
-    
-    </Layout>
-  );
+                    <Card title="Search Posts">
+                        <input
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            placeholder="Search posts..."
+                            style={{ width: '100%', padding: '8px' }}
+                        />
+                    </Card>
+
+                    <Card title={`Posts (${filteredPosts.length})`}>
+                        <PostList
+                            posts={filteredPosts}
+                            onLike={handleLike}
+                            onDelete={handleDelete}
+                        />
+                    </Card>
+                </main>
+
+                <aside style={{ flex: 1 }}>
+                    <Sidebar
+                        totalPosts={posts.length}
+                        totalLikes={posts.reduce((sum, p) => sum + p.likes, 0)}
+                    />
+                </aside>
+            </div>
+        </Layout>
+    );
 }
 
 export default App;

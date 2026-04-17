@@ -1,44 +1,26 @@
 import PostCard from './PostCard';
 
-function PostList(){
-    const posts =[
-         {
-            id: 1,
-            title: "Getting started with React",
-            excerpt: "Learn the basic of React and how to build components",
-            author: "Alice",
-            date: "Jan 15, 2026"
-         },
-      {
-        id: 2,
-        title: "JavaScript best practices",
-        excerpt: "Write cleaner and more efficient JavaScript code",
-        author: "Bob",
-        date: "Jan 14, 2026"
-      },
-      {
-        id: 3,
-        title: "CSS tips and tricks",
-        excerpt: "Make your website look amazing with these CSS tips",
-        author: "Charlie",
-        date: "Jan 13, 2026"
-      }
-         
-
-    ];
+function PostList({ posts, onLike, onDelete }) {
+    if (posts.length === 0) {
+        return <p>No posts found!</p>;
+    }
 
     return (
         <div>
-            {posts.map(post =>(
+            {posts.map(post => (
                 <PostCard
-                key ={post.id}
-                title={post.title}
-                excerpt={post.excerpt}
-                author={post.author}
-                date={post.date}
+                    key={post.id}
+                    title={post.title}
+                    excerpt={post.excerpt}
+                    author={post.author}
+                    date={post.date}
+                    likes={post.likes}
+                    onLike={() => onLike(post.id)}
+                    onDelete={() => onDelete(post.id)}
                 />
             ))}
         </div>
     );
 }
-export default PostList
+
+export default PostList;
