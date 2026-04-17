@@ -1,5 +1,6 @@
  //import Header from './components/Header';
  //import Footer from './components/Footer';
+ import LikesDemo from './components/LikesDemo';
  import Layout from './components/Layout';  
  import PostList from './components/PostList';
  import Sidebar from './components/Sidebar';
@@ -62,6 +63,9 @@
 
     <Card title="Todo List">
     <TodoList />
+</Card>
+<Card title="Likes Demo - Lifting State Up">
+    <LikesDemo />
 </Card>
     
     </Layout>
