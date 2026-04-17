@@ -11,6 +11,7 @@
  import UserForm from './components/UserForm';
  import EvenExample from './components/EventExample';
  import ContactForm from './components/ContactForm';
+ import TodoList from './components/TodoList';
 
  function App() {
   const user = "Mshi";
@@ -58,6 +59,10 @@
       <ContactForm />
 
     </card>
+
+    <Card title="Todo List">
+    <TodoList />
+</Card>
     
     </Layout>
   );
