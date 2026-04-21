@@ -1,16 +1,85 @@
-# React + Vite
+# Week 8: React Fundamentals – CommunityHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Author
+- **Name:** Faith Mshiki Kirimi  
+- **GitHub:** [@your-github-username](https://github.com/your-github-username)  
+- **Date:** April 2026  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Project Description
+Built the **basic React structure** for CommunityHub.  
 
-## React Compiler
+This project focuses on core React fundamentals:
+- JSX syntax
+- Components and props
+- State management (`useState`)
+- Event handling
+- Component composition  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The goal was to understand how React works before moving into advanced features.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies Used
+- React (Vite)
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+
+---
+
+## Features
+- Component-based structure (Header, Footer, Sidebar, PostCard)
+- Dynamic content using props
+- State management with `useState`
+- Event handling (click, input, submit)
+- Controlled forms
+- Rendering lists with `.map()`
+- Basic post system (create, display, like)
+- Reusable components:
+  - Button
+  - Card
+  - Layout
+
+---
+
+## Live Demo  
+
+[![⚛️ View CommunityHub](https://img.shields.io/badge/⚛️%20CommunityHub%20Live-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://Mshi-dev15.github.io/iyf-s10-week-08-Mshi-dev15/)
+
+---
+
+## How to Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-github-username/iyf-s10-week-08-your-github-username.git
+
+2. Navigate into the project:
+   cd iyf-s10-week-08-your-github-username
+
+3. Install dependencies
+   npm install
+
+4. Start the development server:
+   npm run dev
+
+5. Open in browser:
+   http://localhost:5173
+
+---
+
+## Lessons Learned
+- JSX is just JavaScript with HTML-like syntax
+- Components make code reusable and structured
+- Props allow data flow between components
+- useState is the foundation of interactivity
+- React requires immutable updates (no direct state mutation)
+
+---
+
+## Challenges Faced
+- Understanding JSX vs HTML → solved by practice
+- Props confusion → broke components into smaller parts
+- State issues → fixed using spread operator (...)
+- Form handling → used controlled components
