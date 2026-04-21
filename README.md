@@ -1,7 +1,13 @@
 # Week 8: React Fundamentals – CommunityHub
 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=flat&logo=github&logoColor=white)
+
+
 ## Author
-- **Name:** Faith Mshiki Kirimi  
+- **Name:** Faith Mshiki   
 - **GitHub:** [@your-github-username](https://github.com/your-github-username)  
 - **Date:** April 2026  
 
@@ -41,12 +47,6 @@ The goal was to understand how React works before moving into advanced features.
   - Button
   - Card
   - Layout
-
----
-
-## Live Demo  
-
-[![⚛️ View CommunityHub](https://img.shields.io/badge/⚛️%20CommunityHub%20Live-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://Mshi-dev15.github.io/iyf-s10-week-08-Mshi-dev15/)
 
 ---
 
